@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdlib.h>
+
 void teste(int n, char ordem)
 {
 	//Delcaracao de variaveis

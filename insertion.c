@@ -1,6 +1,7 @@
 #include "insercao.h"
 
-void insercao(int *array, int n){
+void insercao(int *array, int n)
+{
 	for (int i = 1; i < n; i++) {
 		int tmp = array[i];
 		int j = i - 1;
