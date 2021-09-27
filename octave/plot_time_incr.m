@@ -5,9 +5,9 @@ function plot_time_incr(data_bubble_incr, data_selection_incr, data_insertion_in
 	y = data_bubble_incr(:,3);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
-	xlabel("data size");
-	ylabel("time (s)");
-	title("Time x Size measures (Increasing)");
+	xlabel("tamanho do array");
+	ylabel("tempo (s)");
+	title("Medidas Tamanho x Tempo (Crescemte)");
 
 	hold on;
 
@@ -37,7 +37,7 @@ function plot_time_incr(data_bubble_incr, data_selection_incr, data_insertion_in
 
 	x = data_counting_incr(:,2);
 	y = data_counting_incr(:,3);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
 

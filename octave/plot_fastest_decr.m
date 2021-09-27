@@ -1,4 +1,4 @@
-function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_decr, data_merge_decr, data_quick_decr, data_shell_decr, data_heap_decr, data_counting_decr)
+function plot_fastest_decr(data_bubble_decr, data_selection_decr, data_insertion_decr, data_merge_decr, data_quick_decr, data_shell_decr, data_heap_decr, data_counting_decr)
 	figure(5);
 
     x = data_bubble_decr(:,2);
@@ -6,9 +6,9 @@ function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_de
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
     axis ([0, 140000, 0, 0.1]);
-	xlabel("data size");
-	ylabel("time (s)");
-	title("Time x Size measures (Decreasing)");
+	xlabel("tamanho do array");
+	ylabel("tempo (s)");
+	title("Medidas Tamanho x Tempo (decrescente) - Mais rápidos");
 
 	hold on;
 
@@ -38,7 +38,7 @@ function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_de
 
 	x = data_counting_decr(:,2);
 	y = data_counting_decr(:,3);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
 

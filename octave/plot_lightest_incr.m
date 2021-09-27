@@ -6,9 +6,9 @@ function plot_lightest_incr(data_bubble_incr, data_selection_incr, data_insertio
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
     axis ([0, 140000, 2, 4]);
-	xlabel("data size");
-	ylabel("memory (kB)");
-	title("Memory x Size measures - Scaled (Increasing)");
+	xlabel("tamanho do array");
+	ylabel("memória (kB)");
+	title("Medidas de Tamaho x Memória (Crescente) - Mais Leves");
 
 	hold on;
 

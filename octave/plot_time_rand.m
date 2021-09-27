@@ -5,9 +5,9 @@ function plot_time_rand(data_bubble_rand, data_selection_rand, data_insertion_ra
 	y = data_bubble_rand(:,3);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
-	xlabel("data size");
-	ylabel("time (s)");
-	title("Time x Size measures (Random)");
+	xlabel("tamanho do array");
+	ylabel("tempo (s)");
+	title("Medidas Tamanho x Tempo (Aleatório)");
 
 	hold on;
 
@@ -37,7 +37,7 @@ function plot_time_rand(data_bubble_rand, data_selection_rand, data_insertion_ra
 
 	x = data_counting_rand(:,2);
 	y = data_counting_rand(:,3);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
     

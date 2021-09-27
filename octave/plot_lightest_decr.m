@@ -6,9 +6,9 @@ function plot_lightest_decr(data_bubble_decr, data_selection_decr, data_insertio
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
     axis ([0, 140000, 2, 4]);
-	xlabel("data size");
-	ylabel("memory (kB)");
-	title("Memory x Size measures - Scaled (Decreasing)");
+	xlabel("tamanho do array");
+	ylabel("memória (kB)");
+	title("Medidas de Tamaho x Memória (Decrescente) - Mais Leves");
 
 	hold on;
 

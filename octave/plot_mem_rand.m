@@ -5,9 +5,9 @@ function plot_mem_rand(data_bubble_rand, data_selection_rand, data_insertion_ran
 	y = data_bubble_rand(:,4);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
-	xlabel("data size");
-	ylabel("memory (kB)");
-	title("Memory x Size measures (Random)");
+	xlabel("tamanho do array");
+	ylabel("memória (kB)");
+	title("Medidas de Tamaho x Memória (Aleatório)");
 
 	hold on;
 
@@ -37,7 +37,7 @@ function plot_mem_rand(data_bubble_rand, data_selection_rand, data_insertion_ran
 
 	x = data_counting_rand(:,2);
 	y = data_counting_rand(:,4);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
     

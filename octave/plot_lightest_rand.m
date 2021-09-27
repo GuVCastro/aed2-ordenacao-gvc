@@ -6,9 +6,9 @@ function plot_lightest_rand(data_bubble_rand, data_selection_rand, data_insertio
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
     axis ([0, 140000, 2, 4]);
-	xlabel("data size");
-	ylabel("memory (kB)");
-	title("Memory x Size measures - Scaled (Random)");
+	xlabel("tamanho do array");
+	ylabel("memória (kB)");
+	title("Medidas de Tamaho x Memória (Aleatório) - Mais Leves");
 
 	hold on;
 

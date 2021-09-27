@@ -5,9 +5,9 @@ function plot_mem_decr(data_bubble_decr, data_selection_decr, data_insertion_dec
 	y = data_bubble_decr(:,4);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
-	xlabel("data size");
-	ylabel("memory (kB)");
-	title("Memory x Size measures (Decreasing)");
+	xlabel("tamanho do array");
+	ylabel("memória (kB)");
+	title("Medidas de Tamaho x Memória (Decrescente)");
 
 	hold on;
 
@@ -37,7 +37,7 @@ function plot_mem_decr(data_bubble_decr, data_selection_decr, data_insertion_dec
 
 	x = data_counting_decr(:,2);
 	y = data_counting_decr(:,4);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
 

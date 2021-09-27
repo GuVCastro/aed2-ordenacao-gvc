@@ -5,9 +5,9 @@ function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_de
 	y = data_bubble_decr(:,3);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
 	grid on;
-	xlabel("data size");
-	ylabel("time (s)");
-	title("Time x Size measures (Decreasing)");
+	xlabel("tamanho do array");
+	ylabel("tempo (s)");
+	title("Medidas Tamanho x Tempo (Decrescente)");
 
 	hold on;
 
@@ -37,7 +37,7 @@ function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_de
 
 	x = data_counting_decr(:,2);
 	y = data_counting_decr(:,3);
-	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2);
+	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
 	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
 
