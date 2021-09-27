@@ -39,7 +39,7 @@ function plot_time_decr(data_bubble_decr, data_selection_decr, data_insertion_de
 	y = data_counting_decr(:,3);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
-	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
+	legend({"bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting"}, 'location', 'eastoutside');
 
     hold off;
 end

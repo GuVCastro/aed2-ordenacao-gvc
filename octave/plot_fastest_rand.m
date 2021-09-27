@@ -40,7 +40,7 @@ function plot_fastest_rand(data_bubble_rand, data_selection_rand, data_insertion
 	y = data_counting_rand(:,3);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
-	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
+	legend({"bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting"}, 'location', 'eastoutside');
     
     hold off;
 end

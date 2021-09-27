@@ -40,7 +40,7 @@ function plot_lightest_incr(data_bubble_incr, data_selection_incr, data_insertio
 	y = data_counting_incr(:,4);
 	plot (x, y, 'MarkerSize', 10, 'LineWidth', 2, "--");
 
-	legend("bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting");
+	legend({"bubble", "selection", "insertion", "merge", "quick", "shell", "heap", "counting"}, 'location', 'eastoutside');
 
 	hold off;
 end
