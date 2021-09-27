@@ -1,6 +1,6 @@
 #include "geracao.h"
 #include "countingsort.h"
-//=============================================================================
+
 int getMaior(int *array, int n) {
     int maior = array[0];
 
@@ -11,7 +11,7 @@ int getMaior(int *array, int n) {
     }
     return maior;
 }
-//=============================================================================
+
 void countingsort(int *array, int n) {
     //Array para contar o numero de ocorrencias de cada elemento
     int tamCount = getMaior(array, n) + 1;
@@ -33,4 +33,3 @@ void countingsort(int *array, int n) {
     //Copiando para o array original
     for(int i = 0; i < n; array[i] = ordenado[i], i++);
 }
-//=============================================================================

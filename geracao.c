@@ -1,31 +1,31 @@
 #include "geracao.h"
-//=============================================================================
+
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
-//=============================================================================
+
 // PROCEDIMENTO PARA TROCAR DOIS ELEMENTOS DO VETOR
 void swap(int *i, int *j) {
    int temp = *i;
    *i = *j;
    *j = temp;
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA PREENCHER UM ARRANJO COM ELEMENTOS EM ORDEM CRESCENTE
 void crescente(int *v, int n) {
    for (int i = 0; i < n; i++) {
       v[i] = i;
    }
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA PREENCHER UM ARRANJO COM ELEMENTOS EM ORDEM DECRESCENTE
 void decrescente(int *v, int n) {
    for (int i = 0; i < n; i++) {
       v[i] = n - 1 - i;
    }
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA PREENCHER UM ARRANJO COM ELEMENTOS EM ORDEM ALEATORIA
 void aleatorio(int *v, int n) {
    crescente(v, n);
@@ -34,7 +34,7 @@ void aleatorio(int *v, int n) {
       swap(&v[i], &v[rand() % n]);
    }
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA PREENCHER UM ARRANJO COM ELEMENTOS DA ENTRADA PADRAO
 int entradaPadrao(int *v) {
    int n;
@@ -46,7 +46,7 @@ int entradaPadrao(int *v) {
    }
    return n;
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA EXIBIR OS DADOS PRESENTES NO ARRANJO
 void mostrar(int *v, int n) {
    printf("[ ");
@@ -55,7 +55,7 @@ void mostrar(int *v, int n) {
    }
    printf("] \n");
 }
-//=============================================================================
+
 // PROCEDIMENTO PARA VERIFICAR SE O ARRANJO ESTA ORDENADO
 bool isOrdenado(int *v, int n){
    bool resp = true;
@@ -67,4 +67,3 @@ bool isOrdenado(int *v, int n){
    }
    return resp;
 }
-//=============================================================================

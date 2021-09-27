@@ -1,5 +1,5 @@
 #include "shellsort.h"
-//=============================================================================
+
 void insercaoPorCor(int *array, int n, int cor, int h){
     for (int i = (h + cor); i < n; i+=h) {
         int tmp = array[i];
@@ -11,7 +11,7 @@ void insercaoPorCor(int *array, int n, int cor, int h){
         array[j + h] = tmp;
     }
 }
-//=============================================================================
+
 void shellsort(int *array, int n) {
     int h = 1;
 
@@ -24,4 +24,3 @@ void shellsort(int *array, int n) {
         }
     } while (h != 1);
 }
-//=============================================================================

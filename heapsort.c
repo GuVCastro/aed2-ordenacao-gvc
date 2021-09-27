@@ -1,11 +1,11 @@
 #include "heapsort.h"
-//=============================================================================
+
 void constroi(int *array, int tamHeap){
     for(int i = tamHeap; i > 1 && array[i] > array[i/2]; i /= 2){
         swap(array + i, array + i/2);
     }
 }
-//=============================================================================
+
 int getMaiorFilho(int *array, int i, int tamHeap){
     int filho;
     if (2*i == tamHeap || array[2*i] > array[2*i+1]){
@@ -15,7 +15,7 @@ int getMaiorFilho(int *array, int i, int tamHeap){
     }
     return filho;
 }
-//=============================================================================
+
 void reconstroi(int *array, int tamHeap){
     int i = 1;
     while(i <= (tamHeap/2)){
@@ -28,7 +28,7 @@ void reconstroi(int *array, int tamHeap){
         }
     }
 }
-//=============================================================================
+
 void heapsort(int *array, int n) {
     //Alterar o vetor ignorando a posicao zero
     int arrayTmp[n+1];
@@ -53,4 +53,3 @@ void heapsort(int *array, int n) {
         array[i] = arrayTmp[i+1];
     }
 }
-//=============================================================================
