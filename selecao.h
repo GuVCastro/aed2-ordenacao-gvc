@@ -1,10 +1,8 @@
-#ifndef SHELLSORT_H
-#define SHELLSORT_H
+#ifndef SELECAO_H
+#define SELECAO_H
 //=============================================================================
 #include "geracao.h"
 //=============================================================================
-void insercaoPorCor(int *array, int n, int cor, int h);
-//=============================================================================
-void shellsort(int *array, int n);
+void selecao(int *array, int n);
 //=============================================================================
 #endif

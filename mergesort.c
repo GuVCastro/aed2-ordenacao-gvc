@@ -1,13 +1,11 @@
 #include "mergesort.h"
 #include <stdlib.h>
-
-void mergesort(int *array, int n) 
-{
+//=============================================================================
+void mergesort(int *array, int n) {
    mergesortRec(array, 0, n-1);
 }
-
-void mergesortRec(int *array, int esq, int dir)
-{
+//=============================================================================
+void mergesortRec(int *array, int esq, int dir){
    if (esq < dir){
       int meio = (esq + dir) / 2;
       mergesortRec(array, esq, meio);
@@ -15,9 +13,8 @@ void mergesortRec(int *array, int esq, int dir)
       intercalar(array, esq, meio, dir);
    }
 }
-
-void intercalar(int* array, int esq, int meio, int dir)
-{
+//=============================================================================
+void intercalar(int* array, int esq, int meio, int dir){
    int n1, n2, i, j, k;
 
    //Definir tamanho dos dois subarrays
@@ -45,3 +42,4 @@ void intercalar(int* array, int esq, int meio, int dir)
       array[k] = (a1[i] <= a2[j]) ? a1[i++] : a2[j++];
    }
 }
+//=============================================================================

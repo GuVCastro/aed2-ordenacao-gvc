@@ -1,4 +1,3 @@
-/* Project libraries */
 #include "bolha.h"
 #include "countingsort.h"
 #include "heapsort.h"
@@ -7,65 +6,88 @@
 #include "quicksort.h"
 #include "selecao.h"
 #include "shellsort.h"
-/* Standard libraries */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/resource.h>
 
-void teste(int n, char ordem)
+struct rusage usage;
+
+void gravaValores(int id_algo, int tamanho, float tempo, float memoria, int id_ordem)
 {
-	//Delcaracao de variaveis
-	//int n = (argc < 2) ? 10000 : atoi(argv[1]);
-	int *array = (int *) malloc(n * sizeof(int));
-
-	// VARIAVEIS PARA CALCULAR O TEMPO
-	clock_t inicio, fim;
-	double total;
-
-	//Geracao do conjunto a ser ordenado
-	switch(ordem){
-		case 'C': crescente(array, n);
-		break;
-		case 'D': decrescente(array, n);
-		break;
-		case 'A': aleatorio(array, n);
-		break;
-		default: aleatorio(array, n);
-	}
-
-	//Mostrar o conjunto a ser ordenado
-	//mostrar(array, n);
-
-	//Execucao do algoritmo de ordenacao
-	inicio = clock();
-	//bolha(array, n);
-	//countingsort(array, n);
-	// heapsort(array, n);
-	insercao(array, n);
-	//mergesort(array, n);
-	//quicksort(array, n);
-	//selecao(array, n);
-	//shellsort(array, n);
-	fim = clock();
-	total = ((fim - inicio) / (double)CLOCKS_PER_SEC);    
-
-	//Mostrar o conjunto ordenado, tempo de execucao e status da ordenacao
-	//algoritmo.mostrar(array, n);
-	printf("N: %d - T: - %f s - O: %c.\n",n, total, ordem);
-	//printf("isOrdenado: %s\n", isOrdenado(array, n) ? "true" : "false");
-
-	//Desalocar o espaco de memoria do array
-	free(array);
+	FILE *fd;
+	
+	fd = fopen("dados_algoritmos.csv", "a+");
+	fprintf(fd, "%d; %d; %f; %0.2f; %d\n", id_algo, tamanho, tempo, memoria, id_ordem);
+	fclose(fd);
 }
 
-int main(int argc, char **argv)
+void teste(int n, char ordem, char *algoritmo)
 {
-	for(int i=2000; i<=128000; i=i*2) {
-		teste(i, 'C');
-		teste(i, 'D');
-		teste(i, 'A');
+    int *array = (int*) malloc(n*sizeof(int));
+
+	// Variáveis dos identificadores do algoritmo usado e a ordenacao inicial do vetor
+	int id_algo = 0, id_ordem = 3;
+
+    // Variáveis para calcular o tempo
+    clock_t inicio, fim;
+    double total;
+
+	// Variáveis para calcular espaço
+	double memory_used;
+
+    //Geracao do conjunto a ser ordenado
+    switch(ordem){
+		case 'C': crescente(array, n);		id_ordem = 1;
+		break;
+		case 'D': decrescente(array, n);	id_ordem = 2;
+		break;
+		case 'A': aleatorio(array, n);		id_ordem = 3;
+		break;
+		default: aleatorio(array, n);
+    }
+	
+    //Execucao do algoritmo de ordenacao	
+	inicio = clock();
+	
+	if (algoritmo != NULL) {
+		if (strcmp("bolha", algoritmo) == 0)			{ bolha(array, n);			id_algo = 1; }
+		else if (strcmp("selecao", algoritmo) == 0)		{ selecao(array, n);		id_algo = 2; }
+		else if (strcmp("insercao", algoritmo) == 0)	{ insercao(array, n);       id_algo = 3; }
+		else if (strcmp("merge", algoritmo) == 0)		{ mergesort(array, n);		id_algo = 4; }
+		else if (strcmp("quick", algoritmo) == 0)		{ quicksort(array, n);		id_algo = 5; }
+		else if (strcmp("shell", algoritmo) == 0)		{ shellsort(array, n);		id_algo = 6; }
+		else if (strcmp("heap", algoritmo) == 0)		{ heapsort(array, n);		id_algo = 7; }
+		else if (strcmp("counting", algoritmo) == 0)	{ countingsort(array, n);	id_algo = 8; }
+		else printf("Argumento Inválido\n");
 	}
 
-	return 0;
+	// Registra tempo
+	fim = clock();
+	total = ((fim - inicio) / (double)CLOCKS_PER_SEC);
+	
+	// Registra memória utilizada
+	getrusage(RUSAGE_SELF, &usage);
+	
+	printf("%s; n = %d; %f s; %0.2f KB; %c\n", algoritmo, n, total, usage.ru_maxrss/1024.0, ordem);
+	gravaValores(id_algo, n, total, usage.ru_maxrss/1024.0, id_ordem);
+
+	//Desaloca o espaco de memoria do array
+    free(array);
+}
+
+int main(int argc, char *argv[])
+{
+	if (argv[1] == NULL) printf("Entrada Vazia\n");
+
+    for(int i = 2000; i <= 128000; i = i*2){
+       teste(i, 'C', argv[1]);
+       teste(i, 'D', argv[1]);
+       teste(i, 'A', argv[1]);
+    }
+    
+    return 0;
 }
