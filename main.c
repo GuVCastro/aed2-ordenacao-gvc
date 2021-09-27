@@ -16,6 +16,7 @@
 
 struct rusage usage;
 
+// Funcao registra em aquivo "dados_algoritmos.csv" valores separados por virgula
 void gravaValores(int id_algo, int tamanho, float tempo, float memoria, int id_ordem)
 {
 	FILE *fd;
@@ -29,14 +30,14 @@ void teste(int n, char ordem, char *algoritmo)
 {
     int *array = (int*) malloc(n*sizeof(int));
 
-	// Variáveis dos identificadores do algoritmo usado e a ordenacao inicial do vetor
+	// Variaveis dos identificadores do algoritmo usado e a ordenacao inicial do vetor
 	int id_algo = 0, id_ordem = 3;
 
-    // Variáveis para calcular o tempo
+    // Variaveis para calcular o tempo
     clock_t inicio, fim;
     double total;
 
-	// Variáveis para calcular espaço
+	// Variaveis para calcular espaco
 	double memory_used;
 
     //Geracao do conjunto a ser ordenado
@@ -62,16 +63,17 @@ void teste(int n, char ordem, char *algoritmo)
 		else if (strcmp("shell", algoritmo) == 0)		{ shellsort(array, n);		id_algo = 6; }
 		else if (strcmp("heap", algoritmo) == 0)		{ heapsort(array, n);		id_algo = 7; }
 		else if (strcmp("counting", algoritmo) == 0)	{ countingsort(array, n);	id_algo = 8; }
-		else printf("Argumento Inválido\n");
+		else printf("Argumento Invalido\n");
 	}
 
 	// Registra tempo
 	fim = clock();
 	total = ((fim - inicio) / (double)CLOCKS_PER_SEC);
 	
-	// Registra memória utilizada
+	// Registra memoria utilizada
 	getrusage(RUSAGE_SELF, &usage);
-	
+
+	// Exibe valores e registra e texto
 	printf("%s; n = %d; %f s; %0.2f KB; %c\n", algoritmo, n, total, usage.ru_maxrss/1024.0, ordem);
 	gravaValores(id_algo, n, total, usage.ru_maxrss/1024.0, id_ordem);
 
@@ -82,7 +84,8 @@ void teste(int n, char ordem, char *algoritmo)
 int main(int argc, char *argv[])
 {
 	if (argv[1] == NULL) printf("Entrada Vazia\n");
-
+	
+	// Passa tamanho do array, ordenacao e algoritmo que sera utilizado
     for(int i = 2000; i <= 128000; i = i*2){
        teste(i, 'C', argv[1]);
        teste(i, 'D', argv[1]);
