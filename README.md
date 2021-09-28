@@ -35,19 +35,19 @@ Abaixo segue o passo a passo para instalação do Octave e execução dos script
 
 **3.** Dentro do console do programa, execute o seguinte comando:
 
->> `octave_plot`
+**>>** `octave_plot`
 
 ## Execução do programa
 ### Parâmetros de execução
 
-bolha     Executa algoritmo **bolha** para arrays de 2000 - 128000         
-selecao   Executa algoritmo **seleção** para arrays de 2000 - 128000       
-insercao  Executa algoritmo **inserção** para arrays de 2000 - 128000      
-merge     Executa algoritmo **merge sort** para arrays de 2000 - 128000   
-quick     Executa algoritmo **quick sort** para arrays de 2000 - 128000   
-shell     Executa algoritmo **shell sort** para arrays de 2000 - 128000   
-heap      Executa algoritmo **heap sort** para arrays de 2000 - 128000    
-counting  Executa algoritmo **counting sort** para arrays de 2000 - 128000
+bolha - Executa algoritmo **bolha** para arrays de 2000 - 128000         
+selecao - Executa algoritmo **seleção** para arrays de 2000 - 128000       
+insercao - Executa algoritmo **inserção** para arrays de 2000 - 128000      
+merge - Executa algoritmo **merge sort** para arrays de 2000 - 128000   
+quick - Executa algoritmo **quick sort** para arrays de 2000 - 128000   
+shell - Executa algoritmo **shell sort** para arrays de 2000 - 128000   
+heap - Executa algoritmo **heap sort** para arrays de 2000 - 128000    
+counting - Executa algoritmo **counting sort** para arrays de 2000 - 128000
 
 ### Execução de todos os algoritmos de uma só vez
 No diretório do projeto se encontra um script que permite execução de todos algoritmos de uma só vez, chamado **exec-all.sh**.
