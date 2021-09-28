@@ -40,7 +40,7 @@ Abaixo segue o passo a passo para instalação do Octave e execução dos script
 ## Execução do programa
 ### Parâmetros de execução
 
-bolha	  Executa algoritmo **bolha** para arrays de 2000 - 128000         
+bolha &nbsp Executa algoritmo **bolha** para arrays de 2000 - 128000         
 selecao   Executa algoritmo **seleção** para arrays de 2000 - 128000       
 insercao  Executa algoritmo **inserção** para arrays de 2000 - 128000      
 merge     Executa algoritmo **merge sort** para arrays de 2000 - 128000   
