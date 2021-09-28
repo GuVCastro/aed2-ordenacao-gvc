@@ -31,6 +31,7 @@ Abaixo segue o passo a passo para instalação do Octave e execução dos script
 **2.** Após instalação, vá até o diretório do projeto e execute os seguntes comandos:
 
 1 `cd octave`
+
 2 `octave`
 
 **3.** Dentro do console do programa, execute o seguinte comando:
