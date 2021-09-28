@@ -7,7 +7,7 @@ function plot_time_incr(data_bubble_incr, data_selection_incr, data_insertion_in
 	grid on;
 	xlabel("tamanho do array");
 	ylabel("tempo (s)");
-	title("Medidas Tamanho x Tempo (Crescemte)");
+	title("Medidas Tamanho x Tempo (Crescente)");
 
 	hold on;
 
